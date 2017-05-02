@@ -1,0 +1,313 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"hash",
+				"hashTable"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/Keypad.java",
+			"settings":
+			{
+				"buffer_size": 1893,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/D059777/Work/Sources/Sandbox/jsworkspace/Hashtable.js",
+			"settings":
+			{
+				"buffer_size": 805,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "{\n    // Per-project settings can be set in .sublime-project file\n\n    //////////////////////\n    // Javatar Settings //\n    //////////////////////\n\n    // Debugging purpose:\n    \"debug_mode\" : false,\n\n    // Javatar general purpose value\n    \"javatar_gp\": 0,\n\n    // Package Subscription:\n    //    dev = Developer release (contains new features, bugs and also debugging messages enabled)\n    //    otherwise = Stable release (safe to use, only stable features enabled)\n    \"package_channel\" : \"stable\",\n\n    // Automatically send statistics and usages informations\n    \"send_stats_and_usages\" : true,\n\n    // Update message id\n    //    -1 = Unsubscribe to important Javatar updates notification (you should check out the JavatarDoc for any update information)\n    //    any other number = Assigned by Javatar to show you a proper update message\n    \"message_id\" : 0,\n\n    // Enable Actions History to helps developer solve the issue\n    \"enable_actions_history\" : true,\n\n    // Maximum waiting time for Javatar packages creation (in seconds)\n    \"maximum_waiting_time\": 15,\n\n    // Default delay before hide a status text (in milliseconds)\n    \"status_delay\" : 5000,\n\n    // Allow Javatar to update project data for restoration\n    \"allow_project_restoration\": true,\n\n    // Time interval to update project data for restoration (in milliseconds)\n    \"project_update_interval\": 60000,\n\n    // Show package path in status bar\n    \"show_package_path\" : true,\n\n    // Source folder (used as default package), must specified in full path\n    // Default is one of...\n    //    - Project-based source folder\n    //    - Top most directory/folder\n    //    - Current directory/folder\n    \"source_folder\" : \"\",\n\n    // Dependency .jar files, use when build\n    \"dependencies\" : [],\n\n    // Initial directory for finding dependencies\n    \"dependencies_path\" : \"$project_dir\",\n\n    ///////////////////\n    // Java Settings //\n    ///////////////////\n\n    // JDK installation path, should contains \"jdk1.<major>.0_<minor>\" folder or similar\n    // Javatar will use this path to detect your JDK installations and let's you select version you want to use\n    // Name should be your os name that get from sublime.platform(), value is a list of path of JDK\n    // Javatar will use current JDK that you are using, otherwise it will use latest version you have\n    //\n    // References: http://docs.oracle.com/javase/8/docs/technotes/guides/install/index.html\n    \"jdk_installation\" : {\n        \"osx\" : [\"/Library/Java/JavaVirtualMachines\"],\n        \"windows\" : [\"C:\\\\Program Files\\\\Java\", \"C:\\\\Program Files (x86)\\\\Java\"],\n        \"linux\" : [\"/usr/jdk\"],\n        \"all\" : [\"/usr/jdk\"]\n    },\n\n    // List of JDK path that Javatar detected and currently use\n    // This should be READ-ONLY unless you know what you are doing\n    \"jdk_version\" : {},\n\n    // Executables that Javatar use to build and run\n    \"java_executables\" : {\n        \"build\" : \"javac\",\n        \"run\" : \"java\",\n        \"version\": \"java\"\n    },\n\n    ////////////////////////////\n    // Run and Build Settings //\n    ////////////////////////////\n\n    // Enable automatic save before build\n    \"automatic_save\" : false,\n\n    // Location to run \"run\" command\n    \"run_location\" : \"$project_dir\",\n\n    // Program arguments to pass to the main executed on the \"run\" command\n    \"program_arguments\" : \"\",\n\n    // Run command\n    \"run_command\" : \"$classpath $full_class_path $program_arguments\",\n\n    // Amount from bottom to snap into autoscrolling area\n    // Increase this number if autoscroll is not working properly\n    \"autoscroll_snap_range\": 1,\n\n    // Always scroll view to bottom in output window\n    \"autoscroll_to_bottom\": true,\n\n    // Location to run \"build\" command\n    \"build_location\" : \"$project_dir\",\n\n    // Build output (class files) location\n    //    Specified here and Javatar will create target path and reference by -d flag in build_command\n    //    \"javac\" don't create target directory as default\n    //    In this case, \"%project_directory%/bin\"\n    \"build_output_location\" : \"$project_dir$sepbin\",\n\n    // Build command\n    \"build_command\" : \"$sourcepath $classpath $d \\\"$file\\\" -Xlint:all\",\n\n    // Number of build thread\n    //    Increase this value can helps building done faster but also use more performances\n    \"parallel_build\" : 2,\n\n    // Build log view creation delay (in second)\n    //    Increase this value can helps prevent double view from showing but also freeze computer for a specified time\n    \"build_log_delay\" : 0.05,\n\n    // Show build logs in specified group and index (prioritize from top to bottom)\n    //    Specified a number view will move the build logs to target group\n    //    Specified a list of one number will move the build logs to target group\n    //    Specified a list of two numbers will move the build logs to target group and target index\n    //    If specified target group is not found, the next group index is used.\n    //        Otherwise, the build logs will show on current group instead\n    //    If specified target index is not found, the build logs will show on target group as a new view\n    //    If both target group and index is not found, the build logs will show on current group instead\n    //    All groups and indices are zero-based\n    //    Run -- window.run_command(\"javatar_view\") -- in console to show view group and index\n    \"build_log_target_group\": [\n    ],\n\n    // Show running console in specified group and index (same format as build_log_delay)\n    \"output_console_target_group\": [\n    ],\n\n    // Refresh rate for Javatar shell (in second)\n    //    Increase this value can helps shell output to print more smoothly but it's also affect the system performances\n    \"shell_refresh_interval\": 0.01,\n\n    // Error handler on output encoding\n    //    ignore = Remove all invalid encoding character\n    //    replace = Replace all invalid encoding character with \"?\" symbol\n    // Change this value without knowing what you're doing is not a good idea\n    \"encoding_handle\": \"replace\",\n\n    //////////////////////////////////\n    // Javatar Validations Settings //\n    //////////////////////////////////\n\n    // Java file extensions\n    \"java_extensions\" : [\".java\"],\n\n    // Java source code validation using scope selector\n    \"java_source_selector\" : \"source.java\",\n\n    // Java version matching using RegEx (get from java -version)\n    \"java_version_match\" : \"(\\\\d+.\\\\d+.\\\\d+)_?([0-9a-zA-Z]+)?\",\n\n    // Method call replacement pattern using RegEx (Use in completions)\n    \"method_replacement\" : \"\\\\(.*?\\\\)(?![,\\\\)])\",\n\n    // Package validation using RegEx\n    \"package_name_match\" : \"^([a-zA-Z_\\\\-$][a-zA-Z\\\\d_\\\\-$]*\\\\.)*[a-zA-Z_$][a-zA-Z\\\\d_$]*$\",\n\n    // Package (with special characters) validation using RegEx\n    \"special_package_name_match\" : \"^([a-zA-Z_\\\\-$][a-zA-Z\\\\d_\\\\-$]*\\\\.)*[a-zA-Z_$][a-zA-Z\\\\d_$,<:]*$\",\n\n    // Package matching using RegEx\n    \"package_match\" : \"^([a-zA-Z_\\\\-$][a-zA-Z\\\\d_\\\\-$]*\\\\.)*\",\n\n    // Class in package matching using RegEx\n    \"package_class_match\" : \"([a-zA-Z_$][a-zA-Z\\\\d_$,<:]*)$\",\n\n    // Package in package keyword scope selector (Use in Correct Class)\n    \"package_name_selector\" : \"storage.modifier.package.java\",\n\n    // Class name scope selector (Use in Correct Class)\n    \"class_name_selector\" : \"entity.name.type.class.java\",\n\n    // Types and classes selector (Use in Organize Imports)\n    \"type_selectors\" : \"@VariableType|@StaticClassOrInterfaceType|@CatchType\",\n\n    // Declarations with children selector (Use in Organize Imports)\n    \"declarations_selector\" : \"@PackageDeclaration|>ImportDeclaration>|>ImportDeclaration\",\n\n    // Package declaration selector (Use in Organize Imports)\n    \"package_declaration_selector\" : \"@PackageDeclaration\",\n\n    // Import declaration selector (Use in Organize Imports)\n    \"import_declaration_selector\" : \"@ImportDeclaration\",\n\n    // Package name in import declaration selector (Use in Organize Imports)\n    \"import_package_name_selector\" : \">ImportDeclaration>QualifiedName\",\n\n    //////////////////////////////////\n    // Javatar Temporary Key/Value  //\n    // For project data restoration //\n    //////////////////////////////////\n    \"project_data\": {}\n}\n",
+			"file": "/C/Users/D059777/AppData/Roaming/Sublime Text 3/Packages/Javatar/Javatar.sublime-settings",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 8210,
+				"line_ending": "Windows",
+				"read_only": true,
+				"scratch": true
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 58.0,
+		"selected_items":
+		[
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"package con",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 569.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"4+4",
+			"ping",
+			"pin",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/D059777/Work/Sources/Sandbox/workspace/Training/src"
+	],
+	"file_history":
+	[
+		"/C/Users/D059777/Work/Sources/Sandbox/workspace/Training/training.sublime-project",
+		"/C/Users/D059777/AppData/Local/Temp/Temp1_markdown_npp_zenburn-master.zip/markdown_npp_zenburn-master/README.md",
+		"/C/Users/D059777/Desktop/TheFutureLab_ideas.md",
+		"/C/Users/D059777/Desktop/fff.md",
+		"/C/Users/D059777/AppData/Local/Temp/OneNote/15.0/NT/4/TheFutureLab_ideas.md",
+		"/C/Users/D059777/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/0NHZL4V0/140918_Xerox_Parc.md",
+		"/C/Users/D059777/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/0NHZL4V0/140915_Project_Exodus.md",
+		"/C/Users/D059777/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/0NHZL4V0/140915_Project_Exodus (3).md",
+		"/C/Users/D059777/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"○",
+			"•",
+			"",
+			"○",
+			"•"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/Keypad.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1893,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								248,
+								248
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 600.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/D059777/Work/Sources/Sandbox/jsworkspace/Hashtable.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 805,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								802,
+								802
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 304.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/D059777/AppData/Roaming/Sublime Text 3/Packages/Javatar/Javatar.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8210,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8210,
+								8210
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 660.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 130.0
+	},
+	"project": "training.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 351.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
