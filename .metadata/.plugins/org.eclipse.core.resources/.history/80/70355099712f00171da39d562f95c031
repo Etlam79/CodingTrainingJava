@@ -1,0 +1,41 @@
+package com.sap.octo.interview.solution;
+
+
+
+import java.util.ArrayList;
+
+import com.sap.octo.interview.datastructure.Ball;
+import com.sap.octo.interview.datastructure.IAnswer;
+
+public class PaulSolution implements IAnswer {
+
+	int tempWeight1;
+	int tempWeight2;
+	int halfSize;
+	@Override
+	public int getAnswer(ArrayList<Ball> balls) {
+		// TODO Auto-generated method stub
+		tempWeight1 = 0;
+		tempWeight2 = 0;
+		
+		if (balls.size() == 1) {
+			return balls.remove(0).getName();
+		} else {
+			halfSize = balls.size()/2;
+			for (int i = 0; i < halfSize; i++) {
+				tempWeight1 += balls.get(i).getWeight();
+				tempWeight2 += balls.get(i + halfSize).getWeight();				
+			}
+			if (tempWeight1 > tempWeight2) {
+				for (int i = 0; i < halfSize; i++) {
+					balls.remove(halfSize);
+				}
+			} else {
+				for (int i = 0; i < halfSize; i++) {
+					balls.remove(0);
+				}				
+			}
+			return getAnswer(balls);
+		}
+	}	
+}

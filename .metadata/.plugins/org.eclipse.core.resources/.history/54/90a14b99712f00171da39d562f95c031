@@ -1,0 +1,61 @@
+package com.sap.octo.interview.solution;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
+import com.sap.octo.interview.datastructure.Ball;
+import com.sap.octo.interview.datastructure.IAnswer;
+
+public class NickSolution implements IAnswer {
+
+	/***
+	 * Questions: 
+	 * You have eight balls all of the same size. 
+	 * 7 of them weigh the same, and one of them weighs slightly more. 
+	 * How can you find the ball that is heavier by using a balance.
+	 * 
+	 * You will get a array list of Ball objects all with equal weight except 1.
+	 * Please use recursion
+	 * 
+	 * See a test stub is written for you and the test class is call SolutionTest.java
+	 * 
+	 */
+	
+	private boolean leftHevier(List<Ball> balls) {
+		int h = balls.size()/2;
+		int l = 0;
+		int r = 0;
+		for(int i = 0;i<h;i++) {
+			l += balls.get(i).getWeight();
+		}
+		for (int i = h;i < balls.size();i++) {
+			r += balls.get(i).getWeight();
+		}
+		return l > r;
+	}
+	
+	
+	/**
+	 * Please return the index of the array list or just use getName() of Ball object
+	 */
+	
+	@Override	
+	public int getAnswer(ArrayList<Ball> balls) {
+		List<Ball> b = balls;
+		int off = 0;
+		while(b.size() > 2) {
+			if (leftHevier(b)) {
+				b = b.subList(0, b.size()/2);
+			} else {
+				off += (b.size()/2);
+				b = b.subList(b.size()/2,b.size());
+			}
+		}
+		if (leftHevier(b))
+			return off;
+		else
+			return off+1;
+	}
+}

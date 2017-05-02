@@ -1,0 +1,44 @@
+package com.sap.octo.interview.solution;
+
+
+import java.util.ArrayList;
+
+import com.sap.octo.interview.datastructure.Ball;
+import com.sap.octo.interview.datastructure.IAnswer;
+
+public class AndreasSolution implements IAnswer {
+
+	@Override
+	public int getAnswer(ArrayList<Ball> balls) {
+		// TODO Auto-generated method stub
+		//return recAnswer(balls, 0, balls.size());
+		return recAnswer(balls, 0, 7);
+		//return -1;
+	}	
+	
+	public int recAnswer(ArrayList<Ball> balls, int left, int right) {
+		if (right==left) {
+			return right;
+		}
+		int amount = ((right-left) / 3 ) + 1;
+		int leftweight = weight(balls,left,left+amount);
+		int rightweight = weight(balls, left+amount+1, left+(2*amount));
+		
+		if (leftweight>rightweight) {
+			return recAnswer(balls, left, left+amount);
+		}
+		if (leftweight<rightweight) {
+			return recAnswer(balls, left+amount+1, left+ (2*amount));
+		}
+		return recAnswer(balls, left+(2*amount)+1, right);
+	}
+	
+	public int weight(ArrayList<Ball> balls, int left, int right) {
+		int weight=0;
+		for (int i=left; i<=right; i++) {
+			weight += balls.get(i).getWeight();
+		}
+		return weight;
+	}
+	
+}

@@ -1,0 +1,39 @@
+package com.sap.octo.interview.solution.test;
+import java.util.ArrayList;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+import com.sap.octo.interview.solution.*;
+
+import eightballs.datastructure.Ball;
+import eightballs.datastructure.BallsQuizFactory;
+import eightballs.datastructure.IAnswer;
+
+public class SolutionTest {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testCandidateSolution(){		
+		BallsQuizFactory factory = BallsQuizFactory.instance();
+		ArrayList<Ball> testBalls = factory.getBalls(8);
+		IAnswer candidateAnswer = new CandidateSolution();
+		int answer = candidateAnswer.getAnswer(testBalls); 
+		
+		assertTrue("Candidate answer is: " + answer + " ," +
+				   "but correct answer is: " + factory.getCorrectAnswer(), 
+				    answer == factory.getCorrectAnswer());
+		
+	}
+
+
+}

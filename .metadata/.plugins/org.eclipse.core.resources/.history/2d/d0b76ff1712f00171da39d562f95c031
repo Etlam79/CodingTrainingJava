@@ -1,0 +1,23 @@
+package eightballs.datastructure;
+
+public class Ball {
+	private int name;
+	private int weight;
+	
+	public Ball(int name, int weight) {
+		this.name = name;
+		this.weight = weight;
+	}
+	public int getName() {
+		return name;
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+	
+	public String toString(){
+		return "Ball<"+ name + "," + weight + ">";
+	}
+	
+}

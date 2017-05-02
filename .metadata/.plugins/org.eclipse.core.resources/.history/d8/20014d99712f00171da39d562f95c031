@@ -1,0 +1,42 @@
+package com.sap.octo.interview.solution;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.sap.octo.interview.datastructure.Ball;
+import com.sap.octo.interview.datastructure.IAnswer;
+
+public class GeorgeSolution implements IAnswer {
+
+	@Override
+	public int getAnswer(ArrayList<Ball> balls) {
+        
+	    int al = balls.size();
+	    List<Ball> b1;
+	    List<Ball> b2;
+	    
+	    if (al == 1)
+           return balls.get(0).getName();
+	    else {
+	    	int as = al /2;
+	    	b1 = (List) balls.subList(0,as);
+	    	b2 = (List) balls.subList(as, al);
+	    	
+	    	int w1 = getTotalWeight(b1);
+	    	int w2 = getTotalWeight(b2);
+	    	
+	    	if (w1 > w2)
+	    		return getAnswer(new ArrayList<Ball>(b1));
+	    	else
+	    		return getAnswer(new ArrayList<Ball>(b2));   
+	    } 
+	}	
+	
+	public int getTotalWeight(List<Ball> balls) {
+		int total=0;
+		for (Ball b:balls){
+		  total = total + b.getWeight();	
+		}
+		return total;
+	}
+}

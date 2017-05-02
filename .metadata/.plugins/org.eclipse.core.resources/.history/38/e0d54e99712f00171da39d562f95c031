@@ -1,0 +1,93 @@
+package com.sap.octo.interview.solution;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
+import com.sap.octo.interview.datastructure.Ball;
+import com.sap.octo.interview.datastructure.IAnswer;
+
+public class DaveCandidateSolution implements IAnswer {
+
+	/***
+	 * Questions: 
+	 * You have eight balls all of the same size. 
+	 * 7 of them weigh the same, and one of them weighs slightly more. 
+	 * How can you find the ball that is heavier by using a balance.
+	 * 
+	 * You will get a array list of Ball objects all with equal weight except 1.
+	 * Please use recursion
+	 * 
+	 * See a test stub is written for you and the test class is call SolutionTest.java
+	 * 
+	 */
+	
+	
+	/**
+	 * Please return the index of the array list or just use getName() of Ball object
+	 */
+	
+	private int solution= -1;
+	
+	@Override	
+	public int getAnswer(ArrayList<Ball> balls) {
+
+		int scaleresult;
+		ArrayList<Ball> leftside = new ArrayList();
+		ArrayList<Ball> rightside = new ArrayList();
+		
+		while (true){
+			if (solution != -1)
+				return solution;
+			if (balls.size() <= 2){
+				leftside.add(balls.get(0));
+				rightside.add(balls.get(1));
+				scaleresult = scale(leftside, rightside);
+				if (scaleresult == -1){
+					solution = leftside.get(0).getName();
+					return leftside.get(0).getName();
+				}else if (scaleresult == 1){
+					solution = rightside.get(0).getName();
+					return rightside.get(0).getName();
+				}
+			}
+			// split ball list
+			for (int i = 0; i < balls.size(); i++){
+				if (i < (balls.size() / 2)){
+					leftside.add(balls.get(i));
+				}else{
+					rightside.add(balls.get(i));
+				}
+				
+			}
+			scaleresult = scale(leftside, rightside);
+			if (scaleresult == 1){
+				getAnswer(rightside);
+			}else if (scaleresult == -1){
+				getAnswer(leftside);
+			}
+		}
+	}	
+	
+	public int scale(ArrayList<Ball> left, ArrayList<Ball> right){
+		int leftweight = 0;
+		int rightweight = 0;
+		
+		for (int i = 0; i < left.size(); i++){
+			leftweight += left.get(i).getWeight();
+		}
+		
+		for (int j = 0; j < left.size(); j++){
+			rightweight += right.get(j).getWeight();
+		}
+		
+		if (leftweight > rightweight){
+			return -1;
+		}else if (rightweight > leftweight){
+			return 1;
+		}else
+			return 0;
+	}
+	
+}

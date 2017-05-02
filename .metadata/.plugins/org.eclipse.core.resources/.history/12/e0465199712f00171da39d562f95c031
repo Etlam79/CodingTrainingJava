@@ -1,0 +1,88 @@
+package com.sap.octo.interview.solution;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
+import com.sap.octo.interview.datastructure.Ball;
+import com.sap.octo.interview.datastructure.IAnswer;
+
+public class ChristianHCandidateSolutionOptimized implements IAnswer {
+
+	/***
+	 * Questions: 
+	 * You have eight balls all of the same size. 
+	 * 7 of them weigh the same, and one of them weighs slightly more. 
+	 * How can you find the ball that is heavier by using a balance.
+	 * 
+	 * You will get a array list of Ball objects all with equal weight except 1.
+	 * Please use recursion
+	 * 
+	 * See a test stub is written for you and the test class is call SolutionTest.java
+	 * 
+	 */
+	
+	
+	/**
+	 * Please return the index of the array list or just use getName() of Ball object
+	 */
+	
+	@Override	
+	public int getAnswer(ArrayList<Ball> balls) {
+		// use List instead of ArrayList
+
+		int size = balls.size();
+
+		// solution found?
+		if (size == 1) return balls.get(0).getName();
+
+		int solution = -1;
+		List<Ball> left = null;
+		List<Ball> right = null;
+		List<Ball> remains = null;
+
+		if (size > 3) {
+
+			// split List into halves
+			left = balls.subList(0, (size - 2) / 2);
+			right = balls.subList((size - 2) / 2, (size - 2));
+			remains = balls.subList((size - 2), size);
+			assert (remains.size() == 2);
+
+		} else if (size == 3) {
+
+			if (balls.get(0).getWeight() > balls.get(1).getWeight())
+				solution = balls.get(0).getName();
+			else if (balls.get(0).getWeight() < balls.get(1).getWeight())
+				solution = balls.get(1).getName();
+			else
+				solution = balls.get(2).getName();
+
+			return solution;
+		}
+
+		// weight both halves
+		int weightLeft = 0;
+		for (Ball b : left) {
+			weightLeft += b.getWeight();
+		}
+
+		int weightRight = 0;
+		for (Ball b : right) {
+			weightRight += b.getWeight();
+		}
+
+		// divide and conquer
+		if (weightLeft > weightRight)
+			solution = getAnswer(new ArrayList<Ball>(left));
+		else if (weightLeft < weightRight)
+			solution = getAnswer(new ArrayList<Ball>(right));
+		else
+			solution = remains.get(0).getWeight() > remains.get(1).getWeight() 
+					? remains.get(0).getName()
+					: remains.get(1).getName();
+
+		return solution;
+	}
+}

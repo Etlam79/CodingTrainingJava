@@ -1,0 +1,70 @@
+package com.sap.octo.interview.solution;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import com.sap.octo.interview.datastructure.Ball;
+import com.sap.octo.interview.datastructure.IAnswer;
+
+public class Vimal_CandidateSolution implements IAnswer {
+
+	/***
+	 * Questions: 
+	 * You have eight balls all of the same size. 
+	 * 7 of them weigh the same, and one of them weighs slightly more. 
+	 * How can you find the ball that is heavier by using a balance.
+	 * 
+	 * You will get a array list of Ball objects all with equal weight except 1.
+	 * Please use recursion
+	 * 
+	 * See a test stub is written for you and the test class is call SolutionTest.java
+	 * 
+	 */
+
+	
+	/**
+	 * Please return the index of the array list or just use getName() of Ball object
+	 */
+	@Override	
+	public int getAnswer(ArrayList<Ball> balls) {
+       int arraylength=balls.size();
+       arraylength=arraylength/2;
+       
+		return findAnswer(0,arraylength,balls);
+	}	
+	public int findAnswer(int startIndex,int endIndex,ArrayList<Ball> balls)
+	{
+	   int sumA=0;
+	   int sumB=0;
+	   int heaviest=0;
+	   
+	   
+	     for(int i=startIndex;i<(endIndex/2)-1;i++)
+	     {
+	    	 
+	    	 sumA+=balls.get(i).getWeight();
+	     }
+	     for(int j=endIndex/2;j<endIndex-1;j++)
+	     {
+	    	 sumB+=balls.get(j).getWeight();
+	     }
+	     if (endIndex!=1)
+	     {
+	     if (sumA>sumB)
+	     {
+	    	 findAnswer(0,endIndex/2,balls);
+	    	 heaviest=startIndex;
+	     }
+	     else
+	     {
+	    	 findAnswer(endIndex/2,endIndex,balls);
+	    	 heaviest=endIndex;
+	     }	
+	     }
+ 
+		return heaviest;
+		
+	}
+}
+	

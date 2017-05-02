@@ -1,0 +1,58 @@
+package com.sap.octo.interview.solution;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.sap.octo.interview.datastructure.Ball;
+import com.sap.octo.interview.datastructure.IAnswer;
+
+public class SaschaSolution implements IAnswer {
+
+	/***
+	 * Questions: 
+	 * You have eight balls all of the same size. 
+	 * 7 of them weigh the same, and one of them weighs slightly more. 
+	 * How can you find the ball that is heavier by using a balance.
+	 * 
+	 * You will get a array list of Ball objects all with equal weight except 1.
+	 * Please use recursion
+	 * 
+	 * See a test stub is written for you and the test class is call SolutionTest.java
+	 * 
+	 */
+	
+	
+	/**
+	 * Please return the index of the array list or just use getName() of Ball object
+	 */
+	@Override	
+	public int getAnswer(ArrayList<Ball> balls) {
+		return getHeavier(balls);
+	}	
+	
+	
+	private int getHeavier(List<Ball> balls) {
+		// calculate the position of split
+		int middle = balls.size() / 2;
+		
+		List<Ball> left = balls.subList(0, middle);
+		List<Ball> right = balls.subList(middle, balls.size());
+		
+		// if position is 1, we only have 2 elements left
+		if(middle == 1) {
+			return (getWeight(left) > getWeight(right))?left.get(0).getName():right.get(0).getName();
+		}
+		
+		return getHeavier( (getWeight(left) > getWeight(right))?left:right);
+	}
+	
+	private int getWeight(List<Ball> balls) {
+		int weight = 0;
+		for(Ball b : balls) {
+			weight += b.getWeight();
+		}
+		
+		return weight;
+	}
+	
+}

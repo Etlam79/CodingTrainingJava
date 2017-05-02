@@ -1,0 +1,44 @@
+package com.sap.octo.interview.solution;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.sap.octo.interview.datastructure.Ball;
+import com.sap.octo.interview.datastructure.IAnswer;
+
+public class FredrickSolution implements IAnswer{
+
+	public int getWeight(List<Ball> balls){
+		int weight = 0;
+		for (Ball ball: balls){
+			weight += ball.getWeight();
+		}
+		return weight;
+	}
+	
+	public List<Ball> getHeavier(List<Ball> balls){
+		
+		if (balls == null || balls.size() <= 1)
+			return balls;
+		
+		List<Ball> list1, list2;
+		int total = balls.size();
+		list1 = balls.subList(0, total/2);
+		list2 = balls.subList(total/2, balls.size());
+		
+		if (getWeight(list1) > getWeight(list2))
+			return getHeavier(list1);
+		else
+			return getHeavier(list2);		
+	}
+	
+	/**
+	 * will return the ball name as an int
+	 */
+	public int getAnswer(ArrayList<Ball> balls){
+		List<Ball> idBalls = getHeavier(balls);		
+		return idBalls.get(0).getName();
+	}
+
+}

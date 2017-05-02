@@ -1,0 +1,66 @@
+package com.sap.octo.interview.solution;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.sap.octo.interview.datastructure.Ball;
+import com.sap.octo.interview.datastructure.IAnswer;
+
+public class TommySolution implements IAnswer {
+
+	/***
+	 * Questions: 
+	 * You have eight balls all of the same size. 
+	 * 7 of them weigh the same, and one of them weighs slightly more. 
+	 * How can you find the ball that is heavier by using a balance.
+	 * 
+	 * You will get a array list of Ball objects all with equal weight except 1.
+	 * Please use recursion
+	 * 
+	 * See a test stub is written for you and the test class is call SolutionTest.java
+	 * 
+	 */
+	
+	
+	/**
+	 * Please return the index of the array list or just use getName() of Ball object
+	 */
+	@Override	
+	public int getAnswer(ArrayList<Ball> balls) {
+		int size = balls.size();
+		int mid = size/2;
+		int upper = 0;
+		int lower = 0;
+		if(size>1){
+			for (int i = 0;i<mid; i++){
+				lower = lower + balls.get(i).getWeight();
+				upper = upper + balls.get(size-1-i).getWeight();
+			}
+			if(lower>upper){
+				//ArrayList lowerList = (ArrayLI)
+				ArrayList <Ball> arrayList = this.fillArrayList(balls.subList(0,mid)); 
+				return getAnswer(arrayList);
+			}else if(upper>lower){
+				ArrayList <Ball> arrayList = this.fillArrayList(balls.subList(mid,size)); 
+				return getAnswer(arrayList);
+
+			}else{
+				// Report Error
+				System.err.println("No heavier ball found");
+				return -1;
+			}
+		}else{
+			return balls.get(0).getName();
+		}
+		
+//		return  -1; //deliberate make the testcase to fail
+	}	
+	private ArrayList <Ball> fillArrayList(List <Ball> list){
+		
+		ArrayList <Ball> arrayList = new ArrayList<Ball>(); 
+		arrayList.addAll(list);
+		return arrayList;
+		
+	}
+}
+	

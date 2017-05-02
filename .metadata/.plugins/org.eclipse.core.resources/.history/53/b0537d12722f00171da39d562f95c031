@@ -1,0 +1,47 @@
+package com.sap.octo.interview.solution;
+
+import java.util.ArrayList;
+
+import eightballs.datastructure.Ball;
+import eightballs.datastructure.BallsQuizFactory;
+import eightballs.datastructure.IAnswer;
+
+public class CandidateSolution implements IAnswer {
+
+	/***
+	 * Questions: 
+	 * You have eight balls all of the same size. 
+	 * 7 of them weigh the same, and one of them weighs slightly more. 
+	 * How can you find the ball that is heavier by using a balance.
+	 * 
+	 * You will get an array list of Ball objects all with equal weight except one.
+	 * Please use recursion to solve the problem
+	 * 
+	 * There is a method testCandidateSolution() in
+	 * com.sap.octo.interview.solution.test.SolutionTest.java
+	 * that you can use to test your solution. Simply run SolutionTest.java
+	 * as a JUnit test.
+	 * Good Luck!!
+	 */
+	
+	
+	/**
+	 * Please return the index of the heavier ball in the array list
+	 */
+	@Override	
+	public int getAnswer(ArrayList<Ball> balls) {
+		return  -1; //deliberate to make the test case fail	
+	}
+	
+
+	
+	public static void main(String[] args) {
+		BallsQuizFactory factory = BallsQuizFactory.instance();
+		ArrayList<Ball> testBalls = factory.getBalls(8);
+		IAnswer candidateAnswer = new CandidateSolution();
+		int answer = candidateAnswer.getAnswer(testBalls);
+		System.out.println(answer);
+	}
+	
+	
+}

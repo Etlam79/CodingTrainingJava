@@ -1,0 +1,20 @@
+<script>
+function moveSequence() {
+	var i = 0;
+	
+	console.log("hier");
+	  function changePosition(){
+		i++;
+		console.log("inner" + i);
+		if(i == sequence.length)	
+		  clearInterval(id);
+		
+		console.log(sequence[i-1] + "->" + sequence[i]);
+ 
+		document.getElementById(sequence[i-1]).style.backgound = ".";
+		document.getElementById(sequence[i]).style.backgound = "X";
+	}
+	var id = setInterval(changePosition,500);
+}
+moveSequence();
+</script>
